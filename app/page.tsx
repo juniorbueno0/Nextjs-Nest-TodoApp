@@ -52,12 +52,12 @@ export default function Home() {
       <div className="flex gap-4">
         <div className="bg-black w-[300px] h-[250px] flex flex-col items-center text-center rounded-lg">
           <form onSubmit={handleSubmit}>
-            <div className="text-white flex flex-col p-2 mt-4">
+            <div className="text-black flex flex-col p-2 mt-4">
               <input type="text" className="input input-bordered mt-1 h-[40px]" placeholder="Title" onChange={(e) => setTitle(e.target.value)}/>
               <input type="text" className="input input-bordered mt-2 h-[40px]" placeholder="Description" onChange={(e) => setDescription(e.target.value)}/>
               <input type="text" className="input input-bordered mt-2 h-[40px]" placeholder="Status" onChange={(e) => setStatus(e.target.value)}/>
             </div>
-              <button type="submit" className="bg-white text-black mt-2 w-full rounded-2xl h-[50px]">Post</button>
+              <button type="submit" className="bg-white text-black text-3xl font-semibold mt-2 w-full rounded-2xl h-[50px]">Post</button>
           </form>
         </div>
 
@@ -85,17 +85,17 @@ export default function Home() {
               <tbody>
                 {todos.map((todo: Todos) => (
                   <tr>
-                    <td>{todo.title}</td>
+                    <td key={todo._id}>{todo.title}</td>
                     <td></td>
                     <td></td>
-                    <td>{todo.description}</td>
+                    <td key={todo._id}>{todo.description}</td>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
-                    <td>{todo.status}</td>
+                    <td key={todo._id}>{todo.status}</td>
                     <td></td>
                     <td></td>
                     <td><button className="ml-4 bg-red-400 rounded-lg px-1 hover:bg-red-500" onClick={() => handleDelete(todo)}> Delete</button></td>
