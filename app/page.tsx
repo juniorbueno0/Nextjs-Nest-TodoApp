@@ -84,7 +84,7 @@ export default function Home() {
               </thead>
               <tbody>
                 {todos.map((todo: Todos) => (
-                  <tr>
+                  <tr  key={todo._id}>
                     <td key={todo._id}>{todo.title}</td>
                     <td></td>
                     <td></td>
